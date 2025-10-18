@@ -67,4 +67,21 @@ public class GradingSystem {
 
         return roundedGradesList;
     }
+
+    public static int getMaxRoundedGrade(int[] grades) {
+        if (grades == null || grades.length == 0) {
+            return 0;
+        }
+
+        int maxGrade = 0;
+
+        for (int grade : grades) {
+            int currentRoundedGrade = roundUp(grade);
+            if (currentRoundedGrade > maxGrade) {
+                maxGrade = currentRoundedGrade;
+            }
+        }
+
+        return maxGrade;
+    }
 }
