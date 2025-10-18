@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -60,6 +61,39 @@ public class BigNumberArithmetic {
             firstDigitIndex++;
         }
         return resultList.subList(firstDigitIndex, resultList.size());
+    }
+
+    public static List<Integer> multiply(int[] num1, int factor) {
+        if (factor < 0 || factor > 9) {
+            throw new IllegalArgumentException("Factor must be a single digit (0-9).");
+        }
+
+        if (factor == 0) {
+            return List.of(0);
+        }
+
+        List<Integer> resultList = new ArrayList<>();
+        int length = num1.length;
+        int carry = 0;
+
+        for (int i = length - 1; i >=0; i--) {
+            int product = num1[i] * factor + carry;
+            int resultDigit = product % 10;
+            resultList.add(resultDigit);
+
+            carry = product / 10;
+        }
+
+        if (carry > 0) {
+            while (carry > 0) {
+                resultList.add(carry % 10);
+                carry /= 10;
+            }
+        }
+
+        Collections.reverse(resultList);
+
+        return resultList;
     }
 
 }
