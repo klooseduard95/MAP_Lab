@@ -56,4 +56,15 @@ public class GradingSystem {
 
         return Math.round(average * 100.0) / 100.0;
     }
+
+    public static List<Integer> getRoundedGrades(int[] grades) {
+        List<Integer> roundedGradesList = new ArrayList<>();
+        for (int grade : grades) {
+            int roundedGrade = roundUp(grade);
+
+            roundedGradesList.add(roundedGrade);
+        }
+
+        return roundedGradesList;
+    }
 }
