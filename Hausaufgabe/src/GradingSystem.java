@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class GradingSystem {
 
     private static int roundUp(int grade) {
@@ -24,5 +27,18 @@ public class GradingSystem {
         } else {
             return grade;
         }
+    }
+
+    public static List<Integer> getFailingGrades(int[] grades) {
+        final int FAILING_THRESHOLD = 40;
+        List<Integer> failingGradesList = new ArrayList<>();
+
+        for (int grade: grades) {
+            if (grade < FAILING_THRESHOLD) {
+                failingGradesList.add(grade);
+            }
+        }
+
+        return failingGradesList;
     }
 }
