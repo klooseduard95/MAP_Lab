@@ -41,4 +41,19 @@ public class GradingSystem {
 
         return failingGradesList;
     }
+
+    public static double CalculateAverageGrade(int [] grades) {
+        if (grades == null || grades.length == 0) {
+            return 0.0;
+        }
+
+        long sum = 0;
+        for (int grade : grades) {
+            sum += grade;
+        }
+
+        double average = (double) sum / grades.length;
+
+        return Math.round(average * 100.0) / 100.0;
+    }
 }
