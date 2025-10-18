@@ -45,5 +45,46 @@ public class Main {
         // 4. Minimale Summe von n-1 Zahlen
         long minSum = ArrayAnalysis.findMinSumOfNMinusOne(exampleArray);
         System.out.println("4. Minimale Summe von n-1 Zahlen: " + minSum);
+
+
+
+        System.out.println("--- Aufgabe 3: Big Number Arithmetic (Listen-Ausgabe) ---");
+
+        // Beispiel 1: Addition
+        int[] numA_add = {1, 3, 0, 0, 0, 0, 0, 0, 0};
+        int[] numB_add = {8, 7, 0, 0, 0, 0, 0, 0, 0};
+
+        // Die Rückgabe ist jetzt eine List<Integer>
+        List<Integer> sum = BigNumberArithmetic.add(numA_add, numB_add);
+
+        System.out.println("1. Summe:");
+        System.out.println("   " + Arrays.toString(numA_add) + " + " + Arrays.toString(numB_add) + " = " + sum);
+
+        // Beispiel 2: Subtraktion
+        int[] numA_sub = {8, 3, 0, 0, 0, 0, 0, 0, 0};
+        int[] numB_sub = {5, 4, 0, 0, 0, 0, 0, 0, 0};
+
+        List<Integer> difference = BigNumberArithmetic.substract(numA_sub, numB_sub);
+
+        System.out.println("2. Differenz:");
+        System.out.println("   " + Arrays.toString(numA_sub) + " - " + Arrays.toString(numB_sub) + " = " + difference);
+
+        // Beispiel 3: Multiplikation
+        int[] num_mul = {2, 3, 6, 0, 0, 0, 0, 0, 0};
+        int factor = 2;
+
+        List<Integer> product = BigNumberArithmetic.multiply(num_mul, factor);
+
+        System.out.println("3. Multiplikation:");
+        System.out.println("   " + Arrays.toString(num_mul) + " * " + factor + " = " + product);
+
+        // Beispiel 4: Ganzzahlige Division
+        int[] num_div = {2, 3, 6, 0, 0, 0, 0, 0, 0};
+        int divisor = 2;
+
+        List<Integer> quotient = BigNumberArithmetic.divide(num_div, divisor);
+
+        System.out.println("4. Ganzzahlige Division:");
+        System.out.println("   " + Arrays.toString(num_div) + " / " + divisor + " = " + quotient);
     }
 }
