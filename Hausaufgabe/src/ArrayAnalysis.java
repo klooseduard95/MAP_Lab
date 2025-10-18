@@ -50,4 +50,22 @@ public class ArrayAnalysis {
         return totalSum - minimum;
     }
 
+    public static long findMinSumOfNMinusOne(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            return 0;
+        }
+
+        long totalSum = 0;
+        int maximum = numbers[0];
+
+        for (int number : numbers) {
+            totalSum += number;
+            if (number > maximum) {
+                maximum = number;
+            }
+        }
+
+        return totalSum - maximum;
+    }
+
 }
