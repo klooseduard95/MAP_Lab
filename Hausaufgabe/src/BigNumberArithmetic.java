@@ -96,4 +96,28 @@ public class BigNumberArithmetic {
         return resultList;
     }
 
+    public static List<Integer> divide(int[] num1, int divisor) {
+        if (divisor <=0 || divisor > 9) {
+            throw new IllegalArgumentException("Divisor must be a single digit (1-9).");
+        }
+
+        List<Integer> resultList = new ArrayList<>();
+        int remainder = 0;
+
+        for (int digit : num1) {
+            int currentNumber = remainder * 10 + digit;
+            int quotientDigit = currentNumber / divisor;
+            resultList.add(quotientDigit);
+
+            remainder = currentNumber % divisor;
+        }
+
+        int firstDigitIndex = 0;
+        while (resultList.size() > 1 && resultList.get(firstDigitIndex) == 0) {
+            firstDigitIndex++;
+        }
+
+        return resultList.subList(firstDigitIndex, resultList.size());
+    }
+
 }
