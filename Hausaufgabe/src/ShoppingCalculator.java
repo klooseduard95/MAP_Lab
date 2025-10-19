@@ -51,4 +51,22 @@ public class ShoppingCalculator {
 
         return maxBuyablePrice;
     }
+
+    public static int findMaxExpenditure(int budget, int[] keyboardPrices, int[] usbPrices) {
+        int maxSpent = -1;
+
+        for (int keyboardPrice : keyboardPrices) {
+            for (int usbPrice : usbPrices) {
+                int currentTotal = keyboardPrice + usbPrice;
+
+                if (currentTotal <= budget) {
+                    if (currentTotal > maxSpent) {
+                        maxSpent = currentTotal;
+                    }
+                }
+            }
+        }
+        return maxSpent;
+    }
+
 }
