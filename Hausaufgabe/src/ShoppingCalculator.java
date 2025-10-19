@@ -14,4 +14,30 @@ public class ShoppingCalculator {
 
         return minPrice;
     }
+
+    private static int findMaximum(int[] prices) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
+
+        int maxPrice = prices[0];
+        for (int i = 1; i <= prices.length; i++) {
+            if (prices[i] > maxPrice) {
+                maxPrice = prices[i];
+            }
+        }
+
+        return maxPrice;
+    }
+
+    public static int findMostExpensiveItem(int[] keyboardPrices, int[] usbPrices) {
+        int maxKeyboard = findMaximum(keyboardPrices);
+        int maxUsb = findMaximum(usbPrices);
+
+        if (maxKeyboard > maxUsb) {
+            return  maxKeyboard;
+        } else {
+            return maxUsb;
+        }
+    }
 }
