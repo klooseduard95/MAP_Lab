@@ -6,7 +6,7 @@ public class ShoppingCalculator {
         }
 
         int minPrice = keyboardPrices[0];
-        for (int i = 1; i <= keyboardPrices.length; i++) {
+        for (int i = 1; i < keyboardPrices.length; i++) {
             if (keyboardPrices[i] < minPrice) {
                 minPrice = keyboardPrices[i];
             }
@@ -21,7 +21,7 @@ public class ShoppingCalculator {
         }
 
         int maxPrice = prices[0];
-        for (int i = 1; i <= prices.length; i++) {
+        for (int i = 1; i < prices.length; i++) {
             if (prices[i] > maxPrice) {
                 maxPrice = prices[i];
             }

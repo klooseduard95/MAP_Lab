@@ -54,7 +54,6 @@ public class Main {
         int[] numA_add = {1, 3, 0, 0, 0, 0, 0, 0, 0};
         int[] numB_add = {8, 7, 0, 0, 0, 0, 0, 0, 0};
 
-        // Die Rückgabe ist jetzt eine List<Integer>
         List<Integer> sum = BigNumberArithmetic.add(numA_add, numB_add);
 
         System.out.println("1. Summe:");
@@ -86,5 +85,47 @@ public class Main {
 
         System.out.println("4. Ganzzahlige Division:");
         System.out.println("   " + Arrays.toString(num_div) + " / " + divisor + " = " + quotient);
+
+
+        int[] keyboards1 = {40, 35, 70, 15, 45};
+        int[] keyboards2 = {15, 20, 10, 35};
+        int[] usbs1 = {20, 15, 40, 15};
+
+        System.out.println("--- Aufgabe 4: Shopping Calculator ---");
+
+        // 1. Billigste Tastatur
+        System.out.println("1. Billigste Tastatur (Keyboards 1: [40, 35, 70, 15, 45]): " +
+                ShoppingCalculator.findCheapestKeyboard(keyboards1));
+
+        System.out.println("----------------------------------------");
+
+        // 2. Teuerster Gegenstand insgesamt
+        System.out.println("2. Teuerster Gegenstand (Keyboards 2 & USBS 1): " +
+                ShoppingCalculator.findMostExpensiveItem(keyboards2, usbs1));
+
+        System.out.println("----------------------------------------");
+
+        // 3. Teuerstes kaufbares USB-Laufwerk
+        int[] usbPrices3 = {15, 45, 20};
+        int budget3 = 30;
+        System.out.println("3. Teuerstes kaufbares USB (Preise: [15, 45, 20], Budget 30): " +
+                ShoppingCalculator.findMostExpensiveBuyableUsb(usbPrices3, budget3));
+
+        System.out.println("----------------------------------------");
+
+        // 4. Maximal ausgegebener Geldbetrag
+        int budget4 = 60;
+        int[] keyboardsA = {40, 50, 60};
+        int[] usbsA = {8, 12};
+        System.out.println("4. Max Ausgabe A (B=60, KB=[40, 50, 60], USB=[8, 12]): " +
+                ShoppingCalculator.findMaxExpenditure(budget4, keyboardsA, usbsA));
+
+        int[] keyboardsB = {60};
+        System.out.println("4. Max Ausgabe B (B=60, KB=[60], USB=[8, 12]): " +
+                ShoppingCalculator.findMaxExpenditure(budget4, keyboardsB, usbsA));
+
+        int[] keyboardsC = {40, 60};
+        System.out.println("4. Max Ausgabe C (B=60, KB=[40, 60], USB=[8, 12]): " +
+                ShoppingCalculator.findMaxExpenditure(budget4, keyboardsC, usbsA));
     }
 }
