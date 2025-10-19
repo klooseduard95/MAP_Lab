@@ -40,4 +40,15 @@ public class ShoppingCalculator {
             return maxUsb;
         }
     }
+
+    public static int findMostExpensiveBuyableUsb(int[] usbPrices, int budget) {
+        int maxBuyablePrice = -1;
+        for (int price : usbPrices) {
+            if (price <= budget && price > maxBuyablePrice) {
+                maxBuyablePrice = price;
+            }
+        }
+
+        return maxBuyablePrice;
+    }
 }
