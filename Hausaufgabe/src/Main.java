@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,16 +8,16 @@ public class Main {
         System.out.println("----------------------------------------");
 
         // 1. Nicht ausreichende Noten (Failing Grades)
-        List<Integer> failingGrades = GradingSystem.getFailingGrades(sampleGrades);
-        System.out.println("1. Nicht ausreichende Noten: " + failingGrades);
+        int[] failing = GradingSystem.getFailingGrades(sampleGrades);
+        System.out.println("1. Nicht ausreichende Noten: " + Arrays.toString(failing));
 
         // 2. Durchschnittswert (Average Grade)
         double averageGrade = GradingSystem.CalculateAverageGrade(sampleGrades);
         System.out.println("2. Durchschnittswert: " + averageGrade);
 
         // 3. Abgerundete Noten (Rounded Grades)
-        List<Integer> roundedGrades = GradingSystem.getRoundedGrades(sampleGrades);
-        System.out.println("3. Abgerundete Noten: " + roundedGrades);
+        int[] rounded = GradingSystem.getRoundedGrades(sampleGrades);
+        System.out.println("3. Abgerundete Noten: " + Arrays.toString(rounded));
 
         // 4. Maximale abgerundete Note (Max Rounded Grade)
         int maxRoundedGrade = GradingSystem.getMaxRoundedGrade(sampleGrades);
