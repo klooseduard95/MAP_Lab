@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GradingSystem {
@@ -16,7 +17,7 @@ public class GradingSystem {
         if (remainder == 0) {
             nextMultipleOf5 = grade;
         } else {
-            nextMultipleOf5 = grade + (5- remainder);
+            nextMultipleOf5 = grade + (5 - remainder);
         }
 
         int difference = nextMultipleOf5 - grade;
@@ -29,17 +30,19 @@ public class GradingSystem {
         }
     }
 
-    public static List<Integer> getFailingGrades(int[] grades) {
+    public static int[] getFailingGrades(int[] grades) {
         final int FAILING_THRESHOLD = 40;
-        List<Integer> failingGradesList = new ArrayList<>();
+        int[] tempFailingGradesList = new int[grades.length];
+        int count = 0;
 
         for (int grade: grades) {
             if (grade < FAILING_THRESHOLD) {
-                failingGradesList.add(grade);
+                tempFailingGradesList[count] = grade;
+                count++;
             }
         }
 
-        return failingGradesList;
+        return Arrays.copyOfRange(tempFailingGradesList, 0, count);
     }
 
     public static double CalculateAverageGrade(int [] grades) {
