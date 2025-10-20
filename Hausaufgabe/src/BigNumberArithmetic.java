@@ -29,13 +29,13 @@ public class BigNumberArithmetic {
         }
     }
 
-    public static List<Integer> substract(int[] num1, int[] num2) {
+    public static int[] substract(int[] num1, int[] num2) {
         if (num1.length != num2.length) {
             throw  new IllegalArgumentException("Arrays must have the same length for addition.");
         }
 
-        List<Integer> resultList = new ArrayList<>();
         int length = num1.length;
+        int[] result = new int[length];
         int borrow = 0;
 
         for (int i = length - 1; i >= 0; i--) {
@@ -51,16 +51,15 @@ public class BigNumberArithmetic {
                 borrow = 0;
             }
 
-            resultList.add(difference);
+            result[i] = difference;
         }
 
-        Collections.reverse(resultList);
 
         int firstDigitIndex = 0;
-        while (resultList.size() > 1 && firstDigitIndex < resultList.size() - 1 && resultList.get(firstDigitIndex) == 0) {
+        while (firstDigitIndex < length - 1 && result[firstDigitIndex] == 0) {
             firstDigitIndex++;
         }
-        return resultList.subList(firstDigitIndex, resultList.size());
+        return Arrays.copyOfRange(result, firstDigitIndex, length);
     }
 
     public static List<Integer> multiply(int[] num1, int factor) {
