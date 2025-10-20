@@ -5,28 +5,26 @@ import java.util.List;
 
 public class BigNumberArithmetic {
 
-    public static List<Integer> add(int[] num1, int[] num2) {
+    public static int[] add(int[] num1, int[] num2) {
         if (num1.length != num2.length) {
             throw new IllegalArgumentException("Arrays must have the same length for addition.");
         }
 
-        List<Integer> resultList = new ArrayList<>();
         int length = num1.length;
+        int[] tempResult = new int[length + 1];
         int carry = 0;
 
         for (int i = length - 1; i >= 0; i--) {
             int digitSum = num1[i] + num2[i] + carry;
-            int resultDigit = digitSum % 10;
-            resultList.add(resultDigit);
+            tempResult[i + 1] = digitSum % 10;
             carry = digitSum / 10;
         }
 
-        if (carry > 0) {
-            resultList.add(carry);
-        }
+        tempResult[0] = carry;
 
-        Collections.reverse(resultList);
-        return resultList;
+        if (tempResult[0] == 0) {
+            return Arrays.copyOfRange(tempResult, 1, tempResult.length);
+        }
     }
 
     public static List<Integer> substract(int[] num1, int[] num2) {
