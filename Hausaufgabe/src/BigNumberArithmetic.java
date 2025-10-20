@@ -1,7 +1,4 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class BigNumberArithmetic {
 
@@ -91,28 +88,28 @@ public class BigNumberArithmetic {
 
     }
 
-    public static List<Integer> divide(int[] num1, int divisor) {
+    public static int[] divide(int[] num1, int divisor) {
         if (divisor <=0 || divisor > 9) {
             throw new IllegalArgumentException("Divisor must be a single digit (1-9).");
         }
 
-        List<Integer> resultList = new ArrayList<>();
+        int length = num1.length;
+        int[] result = new int[length];
         int remainder = 0;
 
-        for (int digit : num1) {
-            int currentNumber = remainder * 10 + digit;
+        for (int i = 0; i < length; i++) {
+            int currentNumber = remainder * 10 + num1[i];
             int quotientDigit = currentNumber / divisor;
-            resultList.add(quotientDigit);
-
+            result[i] = quotientDigit;
             remainder = currentNumber % divisor;
         }
 
         int firstDigitIndex = 0;
-        while (resultList.size() > 1 && resultList.get(firstDigitIndex) == 0) {
+        while (firstDigitIndex < length - 1 && result[firstDigitIndex] == 0) {
             firstDigitIndex++;
         }
 
-        return resultList.subList(firstDigitIndex, resultList.size());
+        return Arrays.copyOfRange(result, firstDigitIndex, length);
     }
 
 }
