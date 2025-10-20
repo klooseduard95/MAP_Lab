@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class GradingSystem {
 
@@ -60,15 +58,17 @@ public class GradingSystem {
         return Math.round(average * 100.0) / 100.0;
     }
 
-    public static List<Integer> getRoundedGrades(int[] grades) {
-        List<Integer> roundedGradesList = new ArrayList<>();
-        for (int grade : grades) {
-            int roundedGrade = roundUp(grade);
-
-            roundedGradesList.add(roundedGrade);
+    public static int[] getRoundedGrades(int[] grades) {
+        if (grades == null) {
+            return new int[0];
         }
 
-        return roundedGradesList;
+        int[] roundedGrades = new int[grades.length];
+        for (int i = 0; i < grades.length; i++) {
+            roundedGrades[i] = roundUp(grades[i]);
+        }
+
+        return roundedGrades;
     }
 
     public static int getMaxRoundedGrade(int[] grades) {
