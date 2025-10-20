@@ -24,6 +24,8 @@ public class BigNumberArithmetic {
 
         if (tempResult[0] == 0) {
             return Arrays.copyOfRange(tempResult, 1, tempResult.length);
+        } else {
+            return tempResult;
         }
     }
 
