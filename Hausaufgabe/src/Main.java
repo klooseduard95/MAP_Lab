@@ -54,37 +54,33 @@ public class Main {
         int[] numA_add = {1, 3, 0, 0, 0, 0, 0, 0, 0};
         int[] numB_add = {8, 7, 0, 0, 0, 0, 0, 0, 0};
 
-        List<Integer> sum = BigNumberArithmetic.add(numA_add, numB_add);
+        int[] sum = BigNumberArithmetic.add(numA_add, numB_add);
 
-        System.out.println("1. Summe:");
-        System.out.println("   " + Arrays.toString(numA_add) + " + " + Arrays.toString(numB_add) + " = " + sum);
+        System.out.println("1. Summe: " + Arrays.toString(numA_add) + " + " + Arrays.toString(numB_add) + " = " + Arrays.toString(sum));
 
         // Beispiel 2: Subtraktion
         int[] numA_sub = {8, 3, 0, 0, 0, 0, 0, 0, 0};
         int[] numB_sub = {5, 4, 0, 0, 0, 0, 0, 0, 0};
 
-        List<Integer> difference = BigNumberArithmetic.substract(numA_sub, numB_sub);
+        int[] difference = BigNumberArithmetic.substract(numA_sub, numB_sub);
 
-        System.out.println("2. Differenz:");
-        System.out.println("   " + Arrays.toString(numA_sub) + " - " + Arrays.toString(numB_sub) + " = " + difference);
+        System.out.println("2. Differenz: " + Arrays.toString(numA_sub) + " - " + Arrays.toString(numB_sub) + " = " + Arrays.toString(difference));
 
         // Beispiel 3: Multiplikation
         int[] num_mul = {2, 3, 6, 0, 0, 0, 0, 0, 0};
         int factor = 2;
 
-        List<Integer> product = BigNumberArithmetic.multiply(num_mul, factor);
+        int[] product = BigNumberArithmetic.multiply(num_mul, factor);
 
-        System.out.println("3. Multiplikation:");
-        System.out.println("   " + Arrays.toString(num_mul) + " * " + factor + " = " + product);
+        System.out.println("3. Multiplikation: " + Arrays.toString(num_mul) + " * " + factor + " = " + Arrays.toString(product));
 
         // Beispiel 4: Ganzzahlige Division
         int[] num_div = {2, 3, 6, 0, 0, 0, 0, 0, 0};
         int divisor = 2;
 
-        List<Integer> quotient = BigNumberArithmetic.divide(num_div, divisor);
+        int[] quotient = BigNumberArithmetic.divide(num_div, divisor);
 
-        System.out.println("4. Ganzzahlige Division:");
-        System.out.println("   " + Arrays.toString(num_div) + " / " + divisor + " = " + quotient);
+        System.out.println("4. Ganzzahlige Division: " + Arrays.toString(num_div) + " / " + divisor + " = " + Arrays.toString(quotient));
 
 
         int[] keyboards1 = {40, 35, 70, 15, 45};
